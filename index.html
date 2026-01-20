@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Instituto | Cursos de Inglés de Excelencia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #2a6bb1;
+            --primary-light: #4a8cd1;
+            --primary-dark: #1c4a7d;
+            --secondary: #ff7e5f;
+            --secondary-light: #ff9e87;
+            --accent: #36b37e;
+            --light: #f8fafc;
+            --light-gray: #eef2f7;
+            --gray: #94a3b8;
+            --dark: #1e293b;
+            --dark-gray: #475569;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-light {
+            background-color: var(--light);
+        }
+
+        .section-gray {
+            background-color: var(--light-gray);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-light));
+        }
+
+        .btn-secondary:before {
+            background: linear-gradient(to right, #e56b4c, var(--secondary));
+        }
+
+        .btn-accent {
+            background: linear-gradient(to right, var(--accent), #4bd396);
+        }
+
+        .btn-accent:before {
+            background: linear-gradient(to right, #2a9d6e, var(--accent));
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:before {
+            background: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background: linear-gradient(135deg, rgba(42, 107, 177, 0.05) 0%, rgba(54, 179, 126, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80') no-repeat center/cover;
+            border-radius: 0 0 0 100px;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 50px 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(42, 107, 177, 0.1) 0%, rgba(54, 179, 126, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 2rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-image:after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--accent);
+            border-radius: var(--radius);
+            z-index: -1;
+        }
+
+        /* Programs */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .program-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .program-header {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .program-body {
+            padding: 40px 30px;
+        }
+
+        .program-body ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .program-body li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .program-body li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Requirements */
+        .requirements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .requirement-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .requirement-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(42, 107, 177, 0.1) 0%, rgba(54, 179, 126, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0;
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 5rem;
+            color: rgba(42, 107, 177, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--primary);
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid var(--light-gray);
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(42, 107, 177, 0.1) 0%, rgba(54, 179, 126, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--light-gray);
+            color: var(--primary);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+            box-shadow: 0 0 0 4px rgba(42, 107, 177, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 100px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo span {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 60px 50px;
+            border-radius: var(--radius);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            animation: modalFade 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(-60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+            line-height: 1;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            color: var(--dark);
+            background-color: var(--light-gray);
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(to right, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+            box-shadow: 0 10px 20px rgba(42, 107, 177, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(42, 107, 177, 0.3);
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .payment-method:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 50%;
+            padding-right: 60px;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 60px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 12px solid white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:before {
+            right: auto;
+            left: -10px;
+            border-left: none;
+            border-right: 12px solid white;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 25px;
+            right: -30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(42, 107, 177, 0.2);
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            right: auto;
+            left: -30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero:before {
+                width: 100%;
+                opacity: 0.2;
+                border-radius: 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 80px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 80px;
+            }
+            
+            .timeline-icon {
+                left: 10px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: 10px;
+            }
+            
+            .timeline-content:before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .hero {
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: white;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                padding: 100px 40px;
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0 0 30px 0;
+            }
+            
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+            
+            .overlay.active {
+                display: block;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 40px 30px;
+            }
+            
+            .testimonial-card {
+                padding: 40px 30px;
+            }
+            
+            .modal-content {
+                padding: 50px 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.9rem;
+            }
+            
+            .feature-card, .requirement-card {
+                padding: 40px 25px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">Meta<span>Instituto</span></div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#programs">Programas</a></li>
+                    <li><a href="#method">Método</a></li>
+                    <li><a href="#requirements">Inscripción</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li>
+                        <a href="#contact" class="btn btn-secondary" style="padding: 12px 28px; margin-top: -5px;">
+                            <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Inscríbete
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1>Aprende Inglés con Confianza en Meta Instituto</h1>
+                <p>Transforma tu futuro con nuestros programas de inglés diseñados para lograr fluidez y confianza en el idioma. Más de 10 años formando estudiantes exitosos con metodología probada y profesores certificados.</p>
+                
+                <div class="hero-btns">
+                    <a href="#programs" class="btn">
+                        <i class="fas fa-book-open" style="margin-right: 10px;"></i> Ver Programas
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-calendar-check" style="margin-right: 10px;"></i> Agendar Cita
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="1500">0</div>
+                        <div class="stat-text">Estudiantes Graduados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-text">% de Satisfacción</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-text">Profesores Certificados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>¿Por Qué Elegir Meta Instituto?</h2>
+                <p>Descubre lo que nos hace la mejor opción para tu aprendizaje del inglés</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Certificación Internacional</h3>
+                    <p>Nuestros cursos están alineados con el Marco Común Europeo y otorgamos certificados con validez internacional reconocida.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Profesores Nativos y Certificados</h3>
+                    <p>Aprende con profesores nativos y bilingües con certificación en enseñanza del inglés como lengua extranjera (TEFL/TESOL).</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Grupos Reducidos</h3>
+                    <p>Clases personalizadas con máximo 10 estudiantes para garantizar atención individualizada y participación activa de todos.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>Plataforma Digital</h3>
+                    <p>Acceso exclusivo a nuestra plataforma online con recursos, ejercicios y seguimiento de tu progreso las 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-gray" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2>Nuestra Historia</h2>
+                    <p>Fundado en 2012, Meta Instituto nació con la misión de transformar la enseñanza del inglés en nuestra comunidad. Lo que comenzó como un pequeño centro de idiomas se ha convertido en una institución de referencia con más de 1,500 estudiantes graduados.</p>
+                    <p>Nuestra filosofía se basa en la creencia de que cualquier persona puede aprender inglés si se le proporcionan las herramientas adecuadas, un entorno de apoyo y una metodología efectiva.</p>
+                    <p>Hoy, seguimos comprometidos con nuestra misión inicial: ofrecer educación de calidad accesible, con programas adaptados a las necesidades reales de nuestros estudiantes, ya sea para crecimiento personal, académico o profesional.</p>
+                    
+                    <a href="#contact" class="btn" style="margin-top: 20px;">
+                        <i class="fas fa-handshake" style="margin-right: 10px;"></i> Conoce Más
+                    </a>
+                </div>
+                
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Clases en Meta Instituto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="section section-light" id="programs">
+        <div class="container">
+            <div class="text-center">
+                <h2>Nuestros Programas de Inglés</h2>
+                <p>Selecciona el programa que mejor se adapte a tus objetivos y nivel actual</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card animate-on-scroll">
+                    <div class="program-header">
+                        <h3>Inglés Básico</h3>
+                        <p>Niveles A1 - A2 | 6 Meses</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Ideal para principiantes. Construye una base sólida en el idioma inglés para comunicarte en situaciones cotidianas.</p>
+                        <ul>
+                            <li>Vocabulario esencial (1,500+ palabras)</li>
+                            <li>Gramática fundamental</li>
+                            <li>Conversaciones básicas</li>
+                            <li>Comprensión auditiva y lectora</li>
+                            <li>Pronunciación correcta</li>
+                            <li>Clases presenciales y material digital</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-accent" style="width: 100%;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i> Solicitar Información
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card animate-on-scroll">
+                    <div class="program-header">
+                        <h3>Inglés Intermedio</h3>
+                        <p>Niveles B1 - B2 | 8 Meses</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Desarrolla fluidez y confianza para comunicarte efectivamente en contextos sociales y profesionales.</p>
+                        <ul>
+                            <li>Conversación fluida sobre diversos temas</li>
+                            <li>Gramática avanzada</li>
+                            <li>Comprensión de textos complejos</li>
+                            <li>Redacción de emails y documentos</li>
+                            <li>Inglés para viajes y trabajo</li>
+                            <li>Preparación para certificaciones</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-accent" style="width: 100%;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i> Solicitar Información
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card animate-on-scroll">
+                    <div class="program-header">
+                        <h3>Inglés Avanzado</h3>
+                        <p>Niveles C1 - C2 | 10 Meses</p>
+                    </div>
+                    <div class="program-body">
+                        <p>Alcanza dominio completo del idioma para contextos académicos, profesionales y de negocios de alto nivel.</p>
+                        <ul>
+                            <li>Fluidez casi nativa</li>
+                            <li>Inglés técnico y de negocios</li>
+                            <li>Preparación TOEFL/IELTS/Cambridge</li>
+                            <li>Presentaciones profesionales</li>
+                            <li>Negociación y persuasión en inglés</li>
+                            <li>Análisis de textos complejos</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-accent" style="width: 100%;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i> Solicitar Información
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 60px;">
+                <h3>También Ofrecemos Programas Especializados</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px;">
+                    <div class="btn-outline" style="padding: 12px 25px;">Inglés para Niños</div>
+                    <div class="btn-outline" style="padding: 12px 25px;">Inglés para Negocios</div>
+                    <div class="btn-outline" style="padding: 12px 25px;">Preparación TOEFL/IELTS</div>
+                    <div class="btn-outline" style="padding: 12px 25px;">Inglés para Viajes</div>
+                    <div class="btn-outline" style="padding: 12px 25px;">Clases Personalizadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="section section-gray" id="method">
+        <div class="container">
+            <div class="text-center">
+                <h2>Nuestro Método de Enseñanza</h2>
+                <p>Una metodología probada que garantiza resultados efectivos y duraderos</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3>Evaluación Inicial</h3>
+                        <p>Cada estudiante comienza con una evaluación completa de su nivel actual de inglés, identificando fortalezas y áreas de oportunidad para personalizar su camino de aprendizaje.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3>Enfoque Comunicativo</h3>
+                        <p>Nuestras clases se centran en la comunicación real desde el primer día, priorizando la fluidez sobre la perfección gramatical y fomentando la confianza al hablar.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3>Aprendizaje Inmersivo</h3>
+                        <p>Creamos un ambiente de inmersión total en inglés dentro y fuera del aula, utilizando materiales auténticos y situaciones reales para un aprendizaje contextualizado.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-content">
+                        <h3>Seguimiento Personalizado</h3>
+                        <p>Cada estudiante recibe seguimiento constante de su progreso, con retroalimentación regular y ajustes en su plan de estudio según sus necesidades evolutivas.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="section section-light" id="requirements">
+        <div class="container">
+            <div class="text-center">
+                <h2>Requisitos de Inscripción</h2>
+                <p>Proceso simple y transparente para comenzar tu camino en el inglés</p>
+            </div>
+            
+            <div class="requirements-container">
+                <div class="requirement-card animate-on-scroll">
+                    <div class="requirement-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Pago Inicial</h3>
+                    <p>Cubrir el pago de materiales y primera colegiatura mensual antes de iniciar tu curso.</p>
+                    <div class="payment-methods">
+                        <div class="payment-method">Transferencia</div>
+                        <div class="payment-method">Depósito</div>
+                        <div class="payment-method">OXXO</div>
+                        <div class="payment-method">Efectivo</div>
+                    </div>
+                </div>
+                
+                <div class="requirement-card animate-on-scroll">
+                    <div class="requirement-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Documentación</h3>
+                    <p>Copia de INE (de padre o tutor si el estudiante es menor de edad) y una foto reciente tamaño infantil.</p>
+                </div>
+                
+                <div class="requirement-card animate-on-scroll">
+                    <div class="requirement-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Cita de Inscripción</h3>
+                    <p>Agendar una cita por WhatsApp para realizar tu proceso de inscripción con anticipación.</p>
+                    <a href="https://wa.me/522382033858" target="_blank" class="btn btn-accent" style="margin-top: 20px; padding: 12px 25px;">
+                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Agendar por WhatsApp
+                    </a>
+                </div>
+                
+                <div class="requirement-card animate-on-scroll">
+                    <div class="requirement-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Cardex de Pago</h3>
+                    <p>Recibirás tu cardex de pago con las fechas correspondientes según tu fecha de ingreso al curso.</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 60px;">
+                <h3>Material Requerido para Clases</h3>
+                <p>Presentarse a clase con libreta, marca textos, lápiz o lapicero para un aprendizaje óptimo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="text-center">
+                <h2>Historias de Éxito</h2>
+                <p>Lo que dicen nuestros estudiantes sobre su experiencia en Meta Instituto</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-container" id="testimonialsContainer">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Llegué a Meta Instituto sin saber nada de inglés y en 8 meses ya podía mantener conversaciones fluidas. Los profesores son increíbles, siempre pacientes y con métodos muy efectivos. Gracias a ellos conseguí un mejor trabajo que requiere inglés."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana López">
+                            </div>
+                            <div>
+                                <h4>Ana López</h4>
+                                <p>Estudiante de Inglés Intermedio | Graduada 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Como ejecutivo, necesitaba mejorar mi inglés para negocios. Meta Instituto me ofreció un programa personalizado que se adaptaba a mi agenda. En 6 meses ya estaba negociando con clientes internacionales con confianza. La inversión valió cada centavo."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Méndez">
+                            </div>
+                            <div>
+                                <h4>Carlos Méndez</h4>
+                                <p>Estudiante de Inglés para Negocios | 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Inscribí a mis dos hijos en el programa para niños y los resultados han sido sorprendentes. No solo aprendieron inglés, sino que ganaron confianza en sí mismos. Las clases son dinámicas y los profesores saben cómo mantener su atención. Totalmente recomendado para familias."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="María González">
+                            </div>
+                            <div>
+                                <h4>María González</h4>
+                                <p>Madre de estudiantes | Desde 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn" id="nextTestimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-light" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2>Contáctanos</h2>
+                <p>Estamos aquí para responder tus preguntas y ayudarte a comenzar tu viaje en el inglés</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visítanos</h3>
+                            <p>Conoce nuestras instalaciones modernas y equipadas para tu aprendizaje.</p>
+                            <a href="https://maps.app.goo.gl/dkRFYpPtqrVA238M9" target="_blank" class="btn btn-outline" style="margin-top: 15px; padding: 12px 25px;">
+                                <i class="fas fa-map-marked-alt" style="margin-right: 8px;"></i> Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Llámanos o Escríbenos</h3>
+                            <p>+52 1 238 203 3858</p>
+                            <p>Disponible de lunes a sábado en horarios de atención.</p>
+                            <a href="https://wa.me/522382033858" target="_blank" class="btn btn-accent" style="margin-top: 15px; padding: 12px 25px;">
+                                <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Enviar WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Correo Electrónico</h3>
+                            <p>info@metainstituto.com</p>
+                            <p>Responderemos en menos de 24 horas hábiles.</p>
+                            <a href="mailto:info@metainstituto.com" class="btn btn-outline" style="margin-top: 15px; padding: 12px 25px;">
+                                <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Enviar Correo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horarios de Atención</h3>
+                            <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
+                            <p><strong>Sábados:</strong> 9:00 AM - 2:00 PM</p>
+                            <p><strong>Domingos:</strong> Cerrado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Síguenos en Redes</h3>
+                            <p>Mantente al día con nuestros eventos, consejos y ofertas especiales.</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/share/15BowRYmke/" target="_blank" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/meta.instituto?igsh=MWRjd2N1NnZhbGl4ZA==" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://g.co/kgs/JtJAFkZ" target="_blank" class="social-link">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-on-scroll">
+                    <h3>Solicita Información Personalizada</h3>
+                    <p>Completa este formulario y nos pondremos en contacto contigo para resolver todas tus dudas.</p>
+                    
+                    <form id="infoForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course">Programa de interés *</label>
+                            <select id="course" class="form-control" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="basico">Inglés Básico (A1-A2)</option>
+                                <option value="intermedio">Inglés Intermedio (B1-B2)</option>
+                                <option value="avanzado">Inglés Avanzado (C1-C2)</option>
+                                <option value="negocios">Inglés para Negocios</option>
+                                <option value="toefl">Preparación TOEFL/IELTS</option>
+                                <option value="ninos">Inglés para Niños</option>
+                                <option value="intensivo">Curso Intensivo</option>
+                                <option value="personalizado">Clases Personalizadas</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje adicional</label>
+                            <textarea id="message" class="form-control" placeholder="Cuéntanos sobre tus objetivos, nivel actual o cualquier duda específica..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%; padding: 18px;">
+                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Enviar Solicitud
+                        </button>
+                        
+                        <p style="font-size: 0.9rem; color: var(--gray); margin-top: 20px; text-align: center;">
+                            * Te contactaremos en un máximo de 24 horas hábiles.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Meta<span>Instituto</span></div>
+                    <p>Institución líder en enseñanza del inglés con más de 10 años de experiencia formando estudiantes exitosos. Comprometidos con la excelencia educativa y el desarrollo personal de cada alumno.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/15BowRYmke/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/meta.instituto?igsh=MWRjd2N1NnZhbGl4ZA==" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://g.co/kgs/JtJAFkZ" target="_blank" class="social-link">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://wa.me/522382033858" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#programs">Programas</a></li>
+                        <li><a href="#method">Método de Enseñanza</a></li>
+                        <li><a href="#requirements">Inscripción</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Programas</h3>
+                    <ul>
+                        <li><a href="#programs">Inglés Básico</a></li>
+                        <li><a href="#programs">Inglés Intermedio</a></li>
+                        <li><a href="#programs">Inglés Avanzado</a></li>
+                        <li><a href="#programs">Inglés para Negocios</a></li>
+                        <li><a href="#programs">Preparación TOEFL/IELTS</a></li>
+                        <li><a href="#programs">Inglés para Niños</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Ubicación en Google Maps</li>
+                        <li><i class="fas fa-phone-alt"></i> +52 1 238 203 3858</li>
+                        <li><i class="fas fa-envelope"></i> info@metainstituto.com</li>
+                        <li><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 AM - 8:00 PM</li>
+                        <li><i class="fas fa-clock"></i> Sábados: 9:00 AM - 2:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Meta Instituto. Todos los derechos reservados.</p>
+                <p>Diseñado para ofrecer la mejor experiencia educativa en la enseñanza del inglés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para inscripción rápida -->
+    <div class="modal" id="inscripcionModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Inscripción Rápida</h2>
+            <p>Completa estos datos para agendar tu cita de evaluación de nivel (gratuita) y comenzar tu proceso de inscripción.</p>
+            
+            <form id="fastForm" style="margin-top: 30px;">
+                <div class="form-group">
+                    <label for="fastName">Nombre completo *</label>
+                    <input type="text" id="fastName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fastPhone">Teléfono *</label>
+                    <input type="tel" id="fastPhone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fastEmail">Correo electrónico</label>
+                    <input type="email" id="fastEmail" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fastDate">Fecha preferida para cita *</label>
+                    <input type="date" id="fastDate" class="form-control" required>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">
+                    <i class="fas fa-calendar-check" style="margin-right: 10px;"></i> Agendar Cita
+                </button>
+            </form>
+            
+            <p style="font-size: 0.9rem; color: var(--gray); margin-top: 25px; text-align: center;">
+                También puedes contactarnos directamente por WhatsApp para un proceso más rápido.
+            </p>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://wa.me/522382033858" target="_blank" class="btn btn-accent">
+                    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/522382033858" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        overlay.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            overlay.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                overlay.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Testimonials Slider
+        const testimonialsContainer = document.getElementById('testimonialsContainer');
+        const prevTestimonial = document.getElementById('prevTestimonial');
+        const nextTestimonial = document.getElementById('nextTestimonial');
+        let currentTestimonial = 0;
+        const totalTestimonials = 3;
+        
+        function updateTestimonialPosition() {
+            testimonialsContainer.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+        
+        nextTestimonial.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            updateTestimonialPosition();
+        });
+        
+        prevTestimonial.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            updateTestimonialPosition();
+        });
+        
+        // Auto slide testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            updateTestimonialPosition();
+        }, 8000);
+        
+        // Modal for fast inscription
+        const inscriptionBtns = document.querySelectorAll('.btn-secondary, .btn-accent');
+        const inscripcionModal = document.getElementById('inscripcionModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        inscriptionBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (btn.getAttribute('href') === '#contact') return;
+                e.preventDefault();
+                inscripcionModal.style.display = 'flex';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            inscripcionModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === inscripcionModal) {
+                inscripcionModal.style.display = 'none';
+            }
+        });
+        
+        // Form submissions
+        const infoForm = document.getElementById('infoForm');
+        const fastForm = document.getElementById('fastForm');
+        
+        infoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const course = document.getElementById('course').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this example, we'll just show a success message
+            alert(`¡Gracias ${name}! Hemos recibido tu solicitud de información para el curso de ${course}. Nos pondremos en contacto contigo en menos de 24 horas hábiles al teléfono ${phone} o correo ${email}.`);
+            
+            // Reset form
+            infoForm.reset();
+        });
+        
+        fastForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('fastName').value;
+            const phone = document.getElementById('fastPhone').value;
+            const email = document.getElementById('fastEmail').value;
+            const date = document.getElementById('fastDate').value;
+            
+            // Format date
+            const formattedDate = new Date(date).toLocaleDateString('es-ES', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Show success message
+            alert(`¡Perfecto ${name}! Hemos agendado tu cita de evaluación de nivel para el ${formattedDate}. Te contactaremos al teléfono ${phone} para confirmar. Recuerda traer una identificación oficial y llegar 10 minutos antes.`);
+            
+            // Reset form and close modal
+            fastForm.reset();
+            inscripcionModal.style.display = 'none';
+        });
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Animate counters
+        const counters = document.querySelectorAll('.stat-number');
+        let animated = false;
+        
+        function animateCounters() {
+            if (animated) return;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.innerText = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target;
+                        animated = true;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Animate elements on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate counters when they become visible
+                    if (entry.target.classList.contains('hero-content')) {
+                        setTimeout(animateCounters, 300);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        animateElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+                header.style.padding = '0.8rem 0';
+            } else {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+                header.style.padding = '1.2rem 0';
+            }
+        });
+        
+        // Set minimum date for fast form to today
+        const today = new Date().toISOString().split('T')[0];
+        const fastDateInput = document.getElementById('fastDate');
+        if (fastDateInput) {
+            fastDateInput.min = today;
+            
+            // Set default to 3 days from now
+            const defaultDate = new Date();
+            defaultDate.setDate(defaultDate.getDate() + 3);
+            fastDateInput.value = defaultDate.toISOString().split('T')[0];
+        }
+        
+        // Initialize with some elements already visible
+        window.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.classList.add('visible');
+                setTimeout(animateCounters, 500);
+            }
+        });
+    </script>
+</body>
+</html>
